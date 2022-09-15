@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmarcott <mickael.marcotte2004@gmail.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/14 18:43:02 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/14 18:50:48 by mmarcott         ###   ########.fr       */
+/*   Created: 2022/09/15 10:23:49 by mmarcott          #+#    #+#             */
+/*   Updated: 2022/09/15 10:53:02 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void ft_print_comb2(void);
+void	ft_putnbr(int nb);
 
-int main()
+int 	main()
 {
-	ft_print_comb2();
+	ft_putnbr(42);
 }

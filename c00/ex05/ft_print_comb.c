@@ -6,15 +6,14 @@
 /*   By: mmarcott <mickael.marcotte2004@gmail.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 14:26:52 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/14 18:37:40 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/09/15 10:50:14 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <stdio.h>
 #include <unistd.h>
 
-void ft_print_comb(void)
-{	
+void	ft_print_comb(void)
+{
 	int	i;
 	int	j;
 	int	k;

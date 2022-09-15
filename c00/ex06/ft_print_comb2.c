@@ -1,59 +1,94 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*   ft_print_combFinal.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmarcott <mickael.marcotte2004@gmail.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/14 18:43:45 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/14 21:50:04 by mmarcott         ###   ########.fr       */
+/*   Created: 2022/09/15 13:02:00 by mmarcott          #+#    #+#             */
+/*   Updated: 2022/09/15 18:34:42 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
 
-void ft_print_comb2(void)
-{
-	int a;
-	int b;
-	int c;
-	int d;
-	int space = 32;
-
-	for(d = '0'; d <= '9'; d++)
+void	ft_chow_comb(char comb[4])
+{	
+	write(1, &comb[0], 1);
+	write(1, &comb[1], 1);
+	write(1, " ", 1);
+	write(1, &comb[2], 1);
+	write(1, &comb[3], 1);
+	if (comb[0] == '9' && comb[1] == '8' && comb[2] == '9' && comb[3] == '9')
 	{
-		for(c ='0'; c <='9'; c++) 
-		{
-			for(b = '0'; b <= '9'; b++)
-			{
-				for(a = '1'; a <= '9'; a++)
-				{
-					write(1, &d, 1);
-					write(1, &c, 1);
-					write(1, &space, 1);
-					write(1, &b, 1);
-					//	Pour enlever 01 01 et le remplacer par 01 02.
-					if(c == '1' && a == '1')
-					{
-						write(1, "2", 1);
-						a++;
-					}
-					else
-					{
-						write(1, &a, 1);
-					}
-					if(d == '9' && c == '9' && b == '9' && a == '9')
-					{
-						//write(1, "NULL", 1);
-					}
-					else
-					{
-						write(1, ",", 1);
-						write(1, &space, 1);
-					}
-				}
-			}
-		}
 	}
+	else
+		write(2, ", ", 2);
+}
+
+void	show_98(char row[4])
+{
+	row[1] = '8';
+	ft_chow_comb(row);
+	row[1] = '9';
+}
+
+void	number_checker(char row[4])
+{
+	if (row[2] > '0' && row[3] == '1')
+	{
+		row[3] = '0';
+		ft_chow_comb(row);
+		write(2, ", ", 2);
+		row[3] = '1';
+		ft_chow_comb(row);
+		row[3]++;
+	}
+	else if (row[3] == '1' && row[1] > '0')
+	{
+		row[3]++;
+		ft_chow_comb(row);
+		write(2, ", ", 2);
+	}
+	else if (row[0] == '9' && row[1] == '9')
+	{
+		show_98(row);
+	}
+	else
+	{
+		ft_chow_comb(row);
+	}
+}
+
+void	ft_print_comb2(void)
+{
+	char	row[4];
+
+	row[0] = '0';
+	while (row[0] <= '9')
+	{
+		row[1] = '0';
+		while (row[1] <= '9')
+		{
+			row[2] = '0';
+			while (row[2] <= '9')
+			{
+				row[3] = '1';
+				while (row[3] <= '9')
+				{
+					number_checker(row);
+					row[3]++;
+				}
+				row[2]++;
+			}
+			row[1]++;
+		}
+		row[0]++;
+	}
+}
+
+int	main(void)
+{
+	ft_print_comb2();
 }
