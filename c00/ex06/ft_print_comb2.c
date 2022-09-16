@@ -6,7 +6,7 @@
 /*   By: mmarcott <mickael.marcotte2004@gmail.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 13:02:00 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/15 18:34:42 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/09/15 20:19:59 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,10 +71,10 @@ void	ft_print_comb2(void)
 		row[1] = '0';
 		while (row[1] <= '9')
 		{
-			row[2] = '0';
+			row[2] = row[0];
 			while (row[2] <= '9')
 			{
-				row[3] = '1';
+				row[3] = row[1] + 1;
 				while (row[3] <= '9')
 				{
 					number_checker(row);
@@ -86,9 +86,4 @@ void	ft_print_comb2(void)
 		}
 		row[0]++;
 	}
-}
-
-int	main(void)
-{
-	ft_print_comb2();
 }

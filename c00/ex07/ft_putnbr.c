@@ -6,7 +6,7 @@
 /*   By: mmarcott <mickael.marcotte2004@gmail.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 10:25:01 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/15 11:24:25 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/09/15 19:29:37 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 #include <unistd.h>
 
 void	ft_putnbr(int nb)
-{
-		
+{	
 }
