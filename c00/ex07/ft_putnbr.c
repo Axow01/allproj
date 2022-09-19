@@ -6,7 +6,7 @@
 /*   By: mmarcott <mickael.marcotte2004@gmail.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 10:25:01 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/19 00:02:19 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/09/19 11:49:31 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,12 @@ void	create_table(char digits[11], int nb)
 void	checker(int nb)
 {
 	char	digits[11];
-	
+
 	if (nb == -2147483648)
 	{
 		write(1, "-2147483648", 11);
 		return ;
-	}
-		
+	}	
 	if (nb < 0)
 	{
 		digits[0] = '-';
@@ -71,9 +70,4 @@ void	checker(int nb)
 void	ft_putnbr(int nb)
 {
 	checker(nb);
-}
-
-int	main(void)
-{
-	ft_putnbr(-2147483648);
 }
