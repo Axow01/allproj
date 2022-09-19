@@ -6,84 +6,62 @@
 /*   By: mmarcott <mickael.marcotte2004@gmail.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 13:02:00 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/15 20:19:59 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/09/18 21:20:29 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
 
-void	ft_chow_comb(char comb[4])
-{	
-	write(1, &comb[0], 1);
-	write(1, &comb[1], 1);
-	write(1, " ", 1);
-	write(1, &comb[2], 1);
-	write(1, &comb[3], 1);
-	if (comb[0] == '9' && comb[1] == '8' && comb[2] == '9' && comb[3] == '9')
-	{
-	}
-	else
-		write(2, ", ", 2);
+void	ft_putchar(char value)
+{
+	write(1, &value, 1);
 }
 
-void	show_98(char row[4])
+void	ft_display(int value)
 {
-	row[1] = '8';
-	ft_chow_comb(row);
-	row[1] = '9';
-}
+	int	x;
+	int	y;
 
-void	number_checker(char row[4])
-{
-	if (row[2] > '0' && row[3] == '1')
+	if (value > 9)
 	{
-		row[3] = '0';
-		ft_chow_comb(row);
-		write(2, ", ", 2);
-		row[3] = '1';
-		ft_chow_comb(row);
-		row[3]++;
-	}
-	else if (row[3] == '1' && row[1] > '0')
-	{
-		row[3]++;
-		ft_chow_comb(row);
-		write(2, ", ", 2);
-	}
-	else if (row[0] == '9' && row[1] == '9')
-	{
-		show_98(row);
+		x = value / 10;
+		y = value % 10;
+		ft_putchar(x + '0');
+		ft_putchar(y + '0');
 	}
 	else
 	{
-		ft_chow_comb(row);
+		ft_putchar('0');
+		ft_putchar(value + 48);
+	}
+}
+
+void	ft_result(int x, int y)
+{
+	ft_display(x);
+	ft_putchar(' ');
+	ft_display(y);
+	if (x < 98 || y < 99)
+	{
+		ft_putchar(',');
+		ft_putchar(' ');
 	}
 }
 
 void	ft_print_comb2(void)
 {
-	char	row[4];
+	int	x;
+	int	y;
 
-	row[0] = '0';
-	while (row[0] <= '9')
+	x = 0;
+	while (x <= 99)
 	{
-		row[1] = '0';
-		while (row[1] <= '9')
+		y = x + 1;
+		while (y <= 99)
 		{
-			row[2] = row[0];
-			while (row[2] <= '9')
-			{
-				row[3] = row[1] + 1;
-				while (row[3] <= '9')
-				{
-					number_checker(row);
-					row[3]++;
-				}
-				row[2]++;
-			}
-			row[1]++;
+			ft_result(x, y);
+			y++;
 		}
-		row[0]++;
+		x++;
 	}
 }

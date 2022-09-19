@@ -6,21 +6,20 @@
 /*   By: mmarcott <mickael.marcotte2004@gmail.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 10:25:01 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/16 11:37:31 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/09/17 19:54:22 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
 
-void	write_digits(char digits[7])
+void	write_digits(char digits[11])
 {	
 	int	index;
 
 	index = 0;
-	while (index < 7)
+	while (index < 11)
 	{
-		if (index == 0)
+		if (index == 0 || digits[index] == '-')
 		{
 			write(1, &digits[index], 1);
 		}
@@ -30,14 +29,16 @@ void	write_digits(char digits[7])
 	}
 }
 
-void	create_table(char digits[7], int nb)
+void	create_table(char digits[11], int nb)
 {
 	int	index;
 
-	index = 6;
+	index = 10;
 	while (index >= 1)
 	{
 		digits[index] = (nb % 10) + '0';
+		if (digits[index] == '0')
+			digits[index] = 0;
 		nb = nb / 10;
 		index--;
 	}
@@ -45,7 +46,7 @@ void	create_table(char digits[7], int nb)
 
 void	checker(int nb)
 {
-	char	digits[7];
+	char	digits[11];
 
 	if (nb < 0)
 	{
@@ -55,6 +56,7 @@ void	checker(int nb)
 	}
 	else
 	{
+		digits[0] = 0;
 		create_table(digits, nb);
 	}
 	write_digits(digits);
