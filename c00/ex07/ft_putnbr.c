@@ -72,8 +72,3 @@ void	ft_putnbr(int nb)
 {
 	checker(nb);
 }
-
-int	main(void)
-{
-	ft_putnbr(-2147483648);
-}
