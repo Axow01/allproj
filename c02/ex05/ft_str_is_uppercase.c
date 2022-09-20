@@ -6,7 +6,7 @@
 /*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 14:22:39 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/20 14:34:37 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/09/20 15:25:24 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,5 @@ int	ft_str_is_uppercase(char *str)
 			is_uppercase = 0;
 		str++;
 	}
+	return (is_uppercase);
 }
