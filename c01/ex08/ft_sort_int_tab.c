@@ -6,11 +6,9 @@
 /*   By: mmarcott <mickael.marcotte2004@gmail.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 11:56:53 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/19 12:33:52 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/09/19 20:31:30 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h> // Remove after testing.
 
 void	ft_sort_int_tab(int *tab, int size)
 {

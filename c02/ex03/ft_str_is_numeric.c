@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmarcott <mickael.marcotte2004@gmail.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/18 15:18:24 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/19 22:58:39 by mmarcott         ###   ########.fr       */
+/*   Created: 2022/09/19 20:08:17 by mmarcott          #+#    #+#             */
+/*   Updated: 2022/09/19 20:35:31 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_rev_int_tab(int *tab, int size)
+int	ft_str_is_numeric(char *str)
 {
-	int	*swap;
-	int	*swap2;
-	int	buffer;
+	int	is_numeric;
 
-	swap = tab;
-	swap2 = tab + (size - 1);
-	while (swap < swap2)
+	is_numeric = 1;
+	while (*str != '\0')
 	{
-		buffer = *swap;
-		*swap = *swap2;
-		*swap2 = buffer;
-		swap++;
-		swap2--;
+		if (*str < 48 || *str > 57)
+			is_numeric = 0;
+		str++;
 	}
+	return (is_numeric);
 }

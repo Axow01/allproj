@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmarcott <mickael.marcotte2004@gmail.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/18 15:18:24 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/19 22:58:39 by mmarcott         ###   ########.fr       */
+/*   Created: 2022/09/19 15:42:18 by mmarcott          #+#    #+#             */
+/*   Updated: 2022/09/19 16:09:09 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_rev_int_tab(int *tab, int size)
+char	*ft_strcpy(char *dest, char *src)
 {
-	int	*swap;
-	int	*swap2;
-	int	buffer;
+	int	i;
 
-	swap = tab;
-	swap2 = tab + (size - 1);
-	while (swap < swap2)
+	i = 0;
+	while (src[i] != '\0')
 	{
-		buffer = *swap;
-		*swap = *swap2;
-		*swap2 = buffer;
-		swap++;
-		swap2--;
+		dest[i] = src[i];
+		i++;
 	}
+	dest[i] = src[i];
+	return (dest);
 }
