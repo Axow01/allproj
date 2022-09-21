@@ -6,21 +6,56 @@
 /*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 22:20:38 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/20 23:10:13 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/09/21 12:12:18 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-char *get_hex(char *c)
+void	ascii_dec_to_hex(int dec, char *hex)
 {
-	
+	int		modulo;
+	int		digit;
+	char	letter;
+
+	letter = 'a';
+	digit = 10;
+	modulo = dec % 16;
+	*hex = (dec / 16) + '0';
+	hex++;
+	if (modulo > 9)
+	{
+		while (digit < 16)
+		{
+			if (modulo == digit)
+			{
+				*hex = letter;
+				break ;
+			}
+			digit++;
+			letter++;
+		}
+	}
+	else
+		*hex = modulo + '0';
 }
 
 void	ft_putstr_non_printable(char *str)
 {
-	while (*str != '\0')
-	{
+	char	hex[2];
+	int		i;
 
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] >= 0 && str[i] <= 31)
+		{
+			ascii_dec_to_hex((int)*str, hex);
+			write(1, "\\", 1);
+			write(1, hex, 2);
+		}
+		else
+			write(1, str, 1);
+		str++;
 	}
 }
