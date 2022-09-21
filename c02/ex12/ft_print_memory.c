@@ -6,11 +6,12 @@
 /*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 12:13:50 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/21 13:17:18 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/09/21 15:40:51 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 
 void	gethex(int nb, char *hex)
 {
@@ -41,8 +42,10 @@ void	gethex(int nb, char *hex)
 	}
 }
 
-//void	*ft_print_memory(void *addr, unsigned int size)
-//{
-
-//	return (addr);
-//}
+void	*ft_print_memory(void *addr, unsigned int size)
+{
+	char *str = addr;
+	write(1, str, 0);
+	size = 0;
+	return (addr);
+}
