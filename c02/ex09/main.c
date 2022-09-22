@@ -4,7 +4,7 @@ char *ft_strcapitalize(char *str);
 
 int	main(void)
 {
-	char	str[] = "34onjour co.mment ;ajd;fj vous aller 34test";
+	char	str[] = "Oic^Km0M[      -]Bm^<Nf^[      -,)9s:8Wptvm=9Y24";
 	
 	printf("%s\n", str);
 	printf("%s\n", ft_strcapitalize(str));

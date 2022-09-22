@@ -1,47 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/19 16:12:12 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/22 13:54:56 by mmarcott         ###   ########.fr       */
+/*   Created: 2022/09/22 11:05:01 by mmarcott          #+#    #+#             */
+/*   Updated: 2022/09/22 13:09:43 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strlen(char *str)
 {
-	int	index;
+	int	i;
 
-	index = 0;
-	while (str[index] != '\0')
-		index++;
-	return (index);
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int	ft_find_string()
 {
-	char	*destb;
-	int		i;
 
-	destb = dest;
-	i = 0;
-	while (*src != '\0')
-	{
-		if ((unsigned)i < n)
-			*destb = *src;
-		else
-			*destb = 0;
-		i++;
-		src++;
-		destb++;
-	}
-	while (i < ft_strlen(dest))
-	{
-		dest[i] = 0;
-		i++;
-	}
-	*destb = '\0';
-	return (dest);
+}
+
+char	*ft_strstr(char *str, char *to_find)
+{
+	char	*strs;
+	char	*to_finds;
+	int	lengthf;
+
+	strs = str;
+	to_finds = to_find;
+	return (to_find);
 }

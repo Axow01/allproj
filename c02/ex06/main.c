@@ -4,7 +4,7 @@ int	ft_str_is_printable(char *str);
 
 int	main(void)
 {
-	char	val[] = "";
+	char	val[] = {127};
 	int	returned = ft_str_is_printable(val);
 	printf("%s\n", val);
 

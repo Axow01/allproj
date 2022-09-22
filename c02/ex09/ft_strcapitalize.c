@@ -6,7 +6,7 @@
 /*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 16:46:19 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/21 19:36:50 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/09/22 13:39:28 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	is_maj(char c)
 
 int	is_number(char c)
 {
-	if (c >= 49 && c <= 57)
+	if (c >= 48 && c <= 57)
 		return (1);
 	return (0);
 }
@@ -60,7 +60,7 @@ char	*ft_strcapitalize(char *str)
 	{
 		if (!alpha(prev) && is_letter(*cur) && !is_number(prev))
 			*cur = *cur - 32;
-		else if (alpha(prev) && is_maj(*cur))
+		if ((alpha(prev) || is_number(prev)) && is_maj(*cur))
 			*cur = *cur + 32;
 		prev = *cur;
 		cur++;
