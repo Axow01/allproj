@@ -6,17 +6,20 @@
 /*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 16:23:41 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/20 16:43:01 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/09/21 19:22:19 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strupcase(char *str)
 {
-	while (*str != '\0')
+	char	*buffer;
+
+	buffer = str;
+	while (*buffer != '\0')
 	{
-		if (*str >= 97 && *str <= 122)
-			*str = *str - 32;
-		str++;
+		if (*buffer >= 97 && *buffer <= 122)
+			*buffer = *buffer - 32;
+		buffer++;
 	}
 	return (str);
 }

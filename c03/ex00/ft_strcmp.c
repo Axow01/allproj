@@ -1,39 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/19 16:12:12 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/21 19:40:02 by mmarcott         ###   ########.fr       */
+/*   Created: 2022/09/21 16:05:12 by mmarcott          #+#    #+#             */
+/*   Updated: 2022/09/21 16:54:10 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	index;
+#include <stdio.h>
 
-	index = 0;
-	while (str[index] != '\0')
-		index++;
-	return (index);
+int	addition_str(char *str)
+{
+	int	total;
+
+	total = 0;
+	while (*str != '\0')
+	{
+		total = total + (int)*str;
+		str++;
+	}
+	return (total);
 }
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int	ft_strcmp(char *s1, char *s2)
 {
-	unsigned int	i;
+	int	string1 = addition_str(s1);
+	int	string2 = addition_str(s2);
+	int val;
 
-	i = 0;
-	while (i < (n) && src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	while (i < ((unsigned)ft_strlen(dest) + 1))
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+	val = 0;
+	if (string1 > string2)
+		val = 1;
+	else if (string1 < string2)
+		val = -1;
+	else if (string1 == string2)
+		val = 0;
+	return (val);
 }

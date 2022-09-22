@@ -6,7 +6,7 @@
 /*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 22:20:38 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/21 12:12:18 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/09/21 20:13:15 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ft_putstr_non_printable(char *str)
 			write(1, hex, 2);
 		}
 		else
-			write(1, str, 1);
-		str++;
+			write(1, &str[i], 1);
+		i++;
 	}
 }

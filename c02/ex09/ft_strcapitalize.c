@@ -6,7 +6,7 @@
 /*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 16:46:19 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/20 21:10:54 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/09/21 19:36:50 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,13 @@ int	is_maj(char c)
 	return (is_maj);
 }
 
+int	is_number(char c)
+{
+	if (c >= 49 && c <= 57)
+		return (1);
+	return (0);
+}
+
 char	*ft_strcapitalize(char *str)
 {
 	char	*cur;
@@ -48,10 +55,10 @@ char	*ft_strcapitalize(char *str)
 
 	i = 0;
 	cur = str;
-	prev = ' ';
+	prev = 0;
 	while (*cur != '\0')
 	{
-		if (!alpha(prev) && is_letter(*cur))
+		if (!alpha(prev) && is_letter(*cur) && !is_number(prev))
 			*cur = *cur - 32;
 		else if (alpha(prev) && is_maj(*cur))
 			*cur = *cur + 32;
