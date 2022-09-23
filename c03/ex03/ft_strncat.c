@@ -6,13 +6,13 @@
 /*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 23:57:04 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/22 00:20:46 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/09/22 22:35:37 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strlen(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (*str != '\0')
