@@ -6,39 +6,20 @@
 /*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 16:05:12 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/24 00:05:03 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/09/24 04:15:14 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	addition_str(char *str)
-{
-	int	total;
-
-	total = 0;
-	while (*str != '\0')
-	{
-		total = total + (int)*str;
-		str++;
-	}
-	return (total);
-}
-
 int	ft_strcmp(char *s1, char *s2)
 {
-	int	string1;
-	int	string2;
-	int	val;
-
-	string1 = addition_str(s1);
-	string2 = addition_str(s2);
-	val = 0;
-	if (string1 > string2)
-		val = 1;
-	else if (string1 < string2)
-		val = -1;
-	else if (string1 == string2)
-		val = 0;
-	return (val);
+	while ((*s1 != '\0' && *s2 != '\0') && (*s1 == *s2))
+	{
+		s1++;
+		s2++;
+	}
+	if (*s1 == *s2)
+		return (0);
+	return (*s1 - *s2);
 }
