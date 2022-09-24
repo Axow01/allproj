@@ -6,13 +6,13 @@
 /*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 21:52:50 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/21 22:42:38 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/09/24 00:05:55 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strlen(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (*str != '\0')
@@ -30,7 +30,7 @@ char	*ft_strcat(char *dest, char *src)
 
 	buff = src;
 	length = ft_strlen(dest);
-	while(*buff != '\0')
+	while (*buff != '\0')
 	{
 		dest[length] = *buff;
 		length++;

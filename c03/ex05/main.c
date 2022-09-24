@@ -7,7 +7,7 @@ int	main(void)
 {
 	char	src[] = "les gens !";
 	char	dest[200] = "Bonjour, ";
-	char	dest1[200] = "Bonjour, ";
+	char	dest1[200] = "fkadjfkad, ";
 	int		length = strlcat(dest, src, 15);
 	int		length2 = ft_strlcat(dest1, src, 15);
 
