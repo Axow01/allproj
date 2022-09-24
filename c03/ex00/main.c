@@ -5,7 +5,9 @@ int	ft_strcmp(char *s1, char *s2);
 
 int	main(void)
 {
-	int a = ft_strcmp("47734", "999888");
-	int b = strcmp("47734", "999888");
+	char	s1[] = "98";
+	char	s2[] = "12";
+	int a = ft_strcmp(s1, s2);
+	int b = strcmp(s1, s2);
 	printf("%d - %d\n", a, b);
 }

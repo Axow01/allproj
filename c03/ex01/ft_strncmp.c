@@ -6,7 +6,7 @@
 /*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 21:21:48 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/21 21:51:45 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/09/24 05:13:57 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,12 @@ int	addition_str(char *str, unsigned int n)
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	val;
+int	i;
 
-	val = 0;
-	if (addition_str(s1, n) < addition_str(s2, n))
-		val = -1;
-	else if (addition_str(s1, n) > addition_str(s2, n))
-		val = 1;
-	else if (addition_str(s1, n) == addition_str(s2, n))
-		val = 0;
-	return (val);
+	i = 0;
+	while ((s1[i] != '\0' && s2[i] != '\0') && (s1[i] == s2[i]) && (unsigned)i < n)
+	{
+		i++;
+	}
+	return (s1[i] - s2[i]);
 }

@@ -9,7 +9,7 @@ int	main(void)
 	char	dest[300] = "Bonjour, ";
 	char	dest1[300] = "Bonjour, ";
 
-	printf("%s\n", strncat(dest1, src, 100));
-	printf("%s\n", ft_strncat(dest, src, 100));
+	printf("%s\n", strncat(dest1, src, 3));
+	printf("%s\n", ft_strncat(dest, src, 3));
 	return (0);
 }
