@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/18 15:18:24 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/24 03:23:56 by mmarcott         ###   ########.fr       */
+/*   Created: 2022/09/24 03:10:14 by mmarcott          #+#    #+#             */
+/*   Updated: 2022/09/24 03:49:18 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void	ft_rev_int_tab(int *tab, int size)
-{
-	int	buffer;
-	int i;
+void	ft_putnbr(int nb);
 
-	if (size < 1)
-		return ;
-	i = 0;
-	while (i < size)
-	{
-		buffer = tab[i];
-		tab[i] = tab[size - 1];
-		tab[size - 1] = buffer;
-		i++;
-		size--;
-	}
+int	main(void)
+{
+	ft_putnbr(2147483647);
+	return (0);
 }

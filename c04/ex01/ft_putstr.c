@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/18 15:18:24 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/24 03:23:56 by mmarcott         ###   ########.fr       */
+/*   Created: 2022/09/24 03:04:48 by mmarcott          #+#    #+#             */
+/*   Updated: 2022/09/24 03:09:32 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-void	ft_rev_int_tab(int *tab, int size)
+void	ft_putstr(char *str)
 {
-	int	buffer;
-	int i;
+	int	i;
 
-	if (size < 1)
-		return ;
 	i = 0;
-	while (i < size)
+	while (str[i] != '\0')
 	{
-		buffer = tab[i];
-		tab[i] = tab[size - 1];
-		tab[size - 1] = buffer;
+		write(1, &str[i], 1);
 		i++;
-		size--;
 	}
 }
