@@ -2,10 +2,11 @@
 
 int	ft_atoi(char *str);
 
-int	main(int argc, char *argv[])
+int	main(void)
 {
 	int	a;
-	if (argc > 1)
-		a = ft_atoi(argv[1]);
+	char jspu[] = "   ---+--+1234ab567";
+	a = ft_atoi(jspu);
+	printf("%d\n", a);
 	return (0);
 }
