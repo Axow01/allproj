@@ -6,12 +6,9 @@
 /*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 13:06:00 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/26 16:38:27 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/09/26 17:03:23 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
-#include <stdio.h>
 
 int	str_len(char *str)
 {
@@ -34,22 +31,30 @@ int	check_base(char *base)
 {
 	int	i;
 	int	j;
+	i = 0;
+	j = 0;
 	while (base[i])
 	{
-		
+		while (i > j)
+		{
+			if (base[i] == base[j])
+				return (0);
+			j++;
+		}
+		j = 0;
+		i++;
 	}
 	return (1);
 }
 
 void	ft_putnbr_base(int nbr, char *base) // Initialize the function.
 {
-	/*if (str_len(base) <= 1 && !check_base(base))
-		return ;*/
+	if (str_len(base) <= 1 || !check_base(base))
+		return ;
 	if (nbr < 0)
 	{
 		nbr *= -1;
 		write(1, "-", 1);
-	}/*
-	conv_to_base_print(nbr, str_len(base), base);*/
-	printf("%d\n", check_base(base));
+	}
+	conv_to_base_print(nbr, str_len(base), base);
 }
