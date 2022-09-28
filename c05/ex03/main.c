@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mick <mick@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 22:48:24 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/27 23:10:08 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/09/28 12:39:10 by mick             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ int	ft_recursive_power(int nb, int power);
 
 int	main(void)
 {
-	printf("%d\n", ft_recursive_power(2, 2));
+	printf("%d\n", ft_recursive_power(0, 0));
 	return (0);
 }

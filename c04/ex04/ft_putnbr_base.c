@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mick <mick@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 13:06:00 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/27 23:40:00 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/09/28 12:53:30 by mick             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	str_len(char *str)
+long int	str_len(char *str)
 {
-	int index;
+	long int index;
 
 	index = 0;
 	while (str[index])
@@ -22,7 +22,7 @@ int	str_len(char *str)
 	return (index);
 }
 
-void	conv_to_base_print(int nbr, int length, char *base)
+void	conv_to_base_print(long int nbr, int length, char *base)
 {
 	if (nbr > length - 1)
 		conv_to_base_print(nbr / length, length, base);
@@ -37,6 +37,8 @@ int	check_base(char *base)
 	j = 0;
 	while (base[i])
 	{
+		if (base[i] == '-' || base [i] == '+')
+			return (0);
 		while (i > j)
 		{
 			if (base[i] == base[j])
@@ -51,12 +53,13 @@ int	check_base(char *base)
 
 void	ft_putnbr_base(int nbr, char *base)
 {
+	long int nb = (long int)nbr;
 	if (str_len(base) <= 1 || !check_base(base))
 		return ;
-	if (nbr < 0)
+	if (nb < 0)
 	{
-		nbr *= -1;
+		nb *= -1;
 		write(1, "-", 1);
 	}
-	conv_to_base_print(nbr, str_len(base), base);
+	conv_to_base_print(nb, str_len(base), base);
 }
