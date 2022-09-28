@@ -6,9 +6,11 @@
 /*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 13:06:00 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/26 17:03:23 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/09/27 23:40:00 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 int	str_len(char *str)
 {
@@ -47,7 +49,7 @@ int	check_base(char *base)
 	return (1);
 }
 
-void	ft_putnbr_base(int nbr, char *base) // Initialize the function.
+void	ft_putnbr_base(int nbr, char *base)
 {
 	if (str_len(base) <= 1 || !check_base(base))
 		return ;
