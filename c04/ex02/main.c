@@ -6,7 +6,7 @@
 /*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 03:10:14 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/24 03:49:18 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/09/29 14:45:52 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ void	ft_putnbr(int nb);
 
 int	main(void)
 {
-	ft_putnbr(2147483647);
+	ft_putnbr(-2147483648);
 	return (0);
 }

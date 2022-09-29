@@ -1,4 +1,7 @@
 {
 	"editor.insertSpaces": false,
-	"editor.detectIndentation": false
+	"editor.detectIndentation": false,
+	"files.associations": {
+		"stdio.h": "c"
+	}
 }

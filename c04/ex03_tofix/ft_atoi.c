@@ -6,11 +6,16 @@
 /*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 06:42:57 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/29 11:15:30 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/09/29 15:45:18 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+int	is_number(char c)
+{
+	if (c >= 48 && c <= 57)
+		return (1);
+	return (0);
+}
 
 int	ft_atoi(char *str)
 {
@@ -27,7 +32,7 @@ int	ft_atoi(char *str)
 		{
 			while (*str >= '0' && *str <= '9')
 			{
-				number = (10 * number) + (*str - '0');
+				number = 10 * number + *str - '0';
 				str++;
 			}
 			break ;
