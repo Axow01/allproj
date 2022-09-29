@@ -1,6 +1,4 @@
 {
-	"files.associations": {
-		"unistd.h": "c",
-		"ft_reverse": "c"
-	}
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false
 }
