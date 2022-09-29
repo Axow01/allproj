@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mick <mick@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 13:06:00 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/28 12:53:30 by mick             ###   ########.fr       */
+/*   Updated: 2022/09/29 11:17:22 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 long int	str_len(char *str)
 {
-	long int index;
+	long int	index;
 
 	index = 0;
 	while (str[index])
@@ -33,6 +33,7 @@ int	check_base(char *base)
 {
 	int	i;
 	int	j;
+
 	i = 0;
 	j = 0;
 	while (base[i])
@@ -53,7 +54,9 @@ int	check_base(char *base)
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	long int nb = (long int)nbr;
+	long int	nb;
+
+	nb = (long int)nbr;
 	if (str_len(base) <= 1 || !check_base(base))
 		return ;
 	if (nb < 0)
