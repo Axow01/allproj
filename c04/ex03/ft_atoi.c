@@ -6,38 +6,29 @@
 /*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 06:42:57 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/29 15:45:18 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/09/29 16:25:11 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_number(char c)
-{
-	if (c >= 48 && c <= 57)
-		return (1);
-	return (0);
-}
-
 int	ft_atoi(char *str)
 {
-	int	operator;
-	int	number;
+	int	i;
+	int	result;
+	int	sign;
 
-	operator = 1;
-	number = 0;
-	while (*str)
+	sign = 1;
+	i = 0;
+	result = 0;
+	while (*str == '\t' || *str == '\n' || *str == '\v'
+		|| *str == '\f' || *str == '\r' || *str == ' ')
+		++str;
+	while (*str == '+' || *str == '-')
+		if (*(str++) == '-')
+			sign *= -1;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if (*str == '-')
-			operator *= -1;
-		else if (*str >= '0' && *str <= '9')
-		{
-			while (*str >= '0' && *str <= '9')
-			{
-				number = 10 * number + *str - '0';
-				str++;
-			}
-			break ;
-		}
-		str++;
+		result = result * 10 + (int)str[i] - '0';
+		++i;
 	}
-	return (operator * number);
+	return (result * sign);
 }
