@@ -2,6 +2,7 @@
 	"editor.insertSpaces": false,
 	"editor.detectIndentation": false,
 	"files.associations": {
-		"stdio.h": "c"
+		"stdio.h": "c",
+		"unistd.h": "c"
 	}
 }
