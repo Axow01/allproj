@@ -6,7 +6,7 @@
 /*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 11:31:39 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/30 12:55:32 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/09/30 13:03:13 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	*ft_range(int min, int max)
 	long int	maxx;
 
 	n = NULL;
-	if ((max - min) * 4 > 16711568 || (max - min) * 4 <= 0)
+	if ((max - min) * 4 <= 0)
 		return (n);
 	if (min > max || min == max)
 		return (n);
