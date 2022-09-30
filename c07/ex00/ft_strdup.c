@@ -1,22 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_params.c                                   :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 17:01:33 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/29 19:34:36 by mmarcott         ###   ########.fr       */
+/*   Created: 2022/09/29 20:20:12 by mmarcott          #+#    #+#             */
+/*   Updated: 2022/09/29 20:47:28 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
 
-int	main(int argc, char *argv[])
+int	ft_strlen(char *src)
 {
-	if (argc > 1)
+	int	i;
+
+	i = 0;
+	while (src[i])
+		i++;
+	return (i + 1);
+}
+
+char	*ft_strdup(char *src)
+{
+	char	*p;
+	int		i;
+
+	p = malloc(ft_strlen(src));
+	i = 0;
+	while (src[i] != '\0')
 	{
-		 
+		p[i] = src[i];
+		i++;
 	}
-	return (0);
+	p[i] = '\0';
+	return (p);
 }
