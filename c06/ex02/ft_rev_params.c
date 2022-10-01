@@ -6,7 +6,7 @@
 /*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 16:57:35 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/29 17:01:03 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/10/01 17:25:27 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void	ft_putstr(char *str)
 
 int	main(int argc, char *argv[])
 {
-	int i;
+	int	i;
+
 	if (argc > 1)
 	{
 		i = argc - 1;
