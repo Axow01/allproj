@@ -6,7 +6,7 @@
 /*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 22:20:38 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/22 14:03:25 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/10/01 17:19:57 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ft_putstr_non_printable(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] >= 0 && str[i] <= 31)
+		if (str[i] >= 0 && str[i] <= 32)
 		{
 			gethex((int)str[i], hex);
 			write(1, "\\", 1);
