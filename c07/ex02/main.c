@@ -6,8 +6,8 @@ int	ft_ultimate_range(int **range, int min, int max);
 int	main(void)
 {
 	int	*range;
-	int min = -4;
-	int max = 20;
+	int min = -6;
+	int max = 200000;
 	int i;
 	int a = ft_ultimate_range(&range, min, max);
 	printf("%d\n", a);
