@@ -15,6 +15,7 @@ int	main(void)
 	{
 		printf("%d, ", range[i]);
 	}
+	free(range);
 	printf("\n");
 	return (0);
 }
