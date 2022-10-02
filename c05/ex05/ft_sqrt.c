@@ -6,14 +6,14 @@
 /*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 22:37:06 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/10/02 18:22:00 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/10/02 18:52:21 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_sqrt(int nb)
 {
 	int	i;
-	
+
 	while (i * i < nb && i < 46341)
 		i++;
 	if (i * i == nb)
