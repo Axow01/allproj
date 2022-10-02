@@ -6,7 +6,7 @@
 /*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 22:37:06 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/10/01 22:09:55 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/10/02 15:04:24 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_sqrt(int nb)
 	while (root <= nb)
 	{
 		value = root * root;
-		if (value >= nb)
+		if (value >= nb || root >= 46340)
 		{
 			if (nb % root == 0)
 				return (root);
