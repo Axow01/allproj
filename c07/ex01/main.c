@@ -5,14 +5,17 @@ int	*ft_range(int min, int max);
 
 int	main()
 {
-	int min = 0;
-	int max = 2147483647;
+	long int min = -5;
+	long int max = 2147483647;
 	int	*p = ft_range(min, max);
 	int i;
+	long int diff2 = (max - min) * sizeof(int);
 
+	if (diff2 < 0)
+		diff2 *= -1;
 	if (p == NULL)
 		return (0);
-	for (i = 0; (long int)i <= (long int)((max - 1) - min); i++)
+	for (i = 0; (long int)i <= diff2; i++)
 	{
 		printf("%d\n", p[i]);
 	}
