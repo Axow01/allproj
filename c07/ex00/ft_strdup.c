@@ -6,12 +6,11 @@
 /*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 20:20:12 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/09/29 20:47:28 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/10/05 12:40:39 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 int	ft_strlen(char *src)
 {

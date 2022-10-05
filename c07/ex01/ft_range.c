@@ -6,7 +6,7 @@
 /*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 11:31:39 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/10/04 17:18:58 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/10/05 12:46:26 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	*ft_range(int min, int max)
 	long int	i;
 	long int	minn;
 	long int	maxx;
+	long int	diff;
 
 	i = 0;
 	minn = min;
@@ -25,8 +26,6 @@ int	*ft_range(int min, int max)
 	n = NULL;
 	if (min > max || min == max)
 		return (n);
-	long int	diff;
-
 	diff = (maxx - minn) * sizeof(int);
 	n = malloc(diff);
 	while (i < (maxx - min))

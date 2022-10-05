@@ -12,7 +12,7 @@ int	main(int argc, char **argv)
 
 	(void) argv;
 	(void) argc;
-	char	*str = ft_strjoin(4, strs, sep);
+	char	*str = ft_strjoin(0, strs, sep);
 
 	printf("%s\n", str);
 	free(str);

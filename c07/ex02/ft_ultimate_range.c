@@ -6,7 +6,7 @@
 /*   By: mmarcott <mmarcott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 16:11:05 by mmarcott          #+#    #+#             */
-/*   Updated: 2022/10/02 18:39:24 by mmarcott         ###   ########.fr       */
+/*   Updated: 2022/10/05 12:45:33 by mmarcott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,28 @@
 
 int	*range_create(int min, int max)
 {
-	int	*rangee;
-	int	*buffer;
+	int			*n;
+	long int	i;
+	long int	minn;
+	long int	maxx;
+	long int	diff;
 
-	if (min >= max)
-		return (0);
-	rangee = (int *)malloc(sizeof(min) * (max - min));
-	if (!rangee)
-		return (0);
-	buffer = rangee;
-	while (min < max)
-		*buffer++ = min++;
-	return (rangee);
+	i = 0;
+	minn = min;
+	maxx = max;
+	n = NULL;
+	if (min > max || min == max)
+		return (n);
+	diff = (maxx - minn) * sizeof(int);
+	n = malloc(diff);
+	while (i < (maxx - min))
+	{
+		n[i] = minn;
+		minn++;
+		i++;
+	}
+	(void) diff;
+	return (n);
 }
 
 int	ft_ultimate_range(int **range, int min, int max)
