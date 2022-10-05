@@ -5,8 +5,8 @@ int	*ft_range(int min, int max);
 
 int	main()
 {
-	long int min = -20000;
-	long int max = 20030033;
+	long int min = 0;
+	long int max = -5;
 	int	*p = ft_range(min, max);
 	long int i;
 	long int diff2 = (max - min) * sizeof(int);
