@@ -21,10 +21,7 @@ int	ft_iterative_power(int nb, int power)
 		return (1);
 	if (power < 0)
 		return (0);
-	while (i < power)
-	{
+	while (i++ < power)
 		nb *= defnb;
-		i++;
-	}
 	return (nb);
 }
